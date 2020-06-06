@@ -1,0 +1,112 @@
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学情预警综合分析平台</title>
+    <!-- 引入Bootstrap核心样式文件（必须） -->
+    <link rel="stylesheet" href="{% static 'css/stu_css/bootstrap.css' %}">
+    <!-- 你自己的样式或其他文件 -->
+    <link rel="stylesheet" href="{% static 'css/stu_css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mains/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stu_css/shops.css' %}">
+    <!--站点图标-->
+    <link rel="shortcut icon" href="http://iph.href.lu/32x32?text=tb" type="image/x-icon">
+</head>
+<body>
+    <div class="headerer" style="position: fixed;top: 0;width: 100%;">
+                <div class="container" style="width: 100%;padding: 0 30px;box-sizing: border-box;">
+                    <div class="header-main">
+                        <div class="logo">
+                            <a href="{% url 'main' %}" style="font-size: 25px;text-decoration: none"> 学情分析与助学平台 </a>
+                        </div>
+                        <div class="head-right">
+                            <div class="top-nav">
+                                <span class="menu"> <img src="{% static 'images/icon.png' %}" alt="" /></span>
+                                <ul class="res">
+                                    <li><a class="active" href="{% url 'main' %}">个人主页</a></li>
+                                    <li><a href="{% url 'stcred' %}">我的学分</a></li>
+                                     <li><a href="{% url 'course' %}">我的课程</a></li>
+                                    <li><a href="{% url 'inst' %}">专业兴趣</a></li>
+                                    <li><a href="https://helpstudy.cn/thirdAuth/1/{{ info.st_id }}/{{ range_code }}">学习状况</a></li>
+                                    <li><a href="https://helpstudy.cn/thirdAuth/2/{{ info.st_id }}/{{ range_code }}">学习计划</a></li>
+                                    <li><a href="https://helpstudy.cn/thirdAuth/3/{{ info.st_id }}/{{ range_code }}">在线学习</a></li>
+                                </ul>
+                            </div>
+
+    {#						<div style="position: relative;width:37px;height:37px;display: inline-block;float: right;padding:5px;margin:30px 70px 0 0;background: #fff;border-radius: 30px;overflow: hidden;">#}
+    {#							<span class="glyphicon glyphicon-bell" style="font-size: 25px;margin:2px 0 0 2px;"></span>#}
+    {#							<span style="position: absolute;right: 5px;top: 5px;font-size: 12px;color: #fff;display: inline-block;width: 15px;height: 15px;background: red;border-radius: 15px;text-align: center;">3</span>#}
+    {#						</div>#}
+
+
+                            <div class="search-box">
+                                <div id="sb-search" class="sb-search">
+                                    <p><a style="text-decoration: none; display: inline-block;width: 100%;height: 100%;line-height: 40px;padding: 0;" href="{% url 'logout' %}">退出</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+    <div class="wrapperto">
+        <div class="main-product-thumbnail">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="  padding-top: 150px;">
+                        <div class="thubnail-desc fix gzxiangq">
+                            <h4 class="product-header col-xs-12 col-sm-12 col-md-12 col-lg-12">nodejs架构师</h4>
+                            <div class="pro-price gzxiangqxx col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                                <p><span class="skuer">薪酬：</span><span class="price">16-25K</span></p>
+                                <p><span class="skuer">发布单位：</span><a href="#">深圳市明源云客电子商务有限公司</a></p>
+                                <p><span class="skuer">工作时间：</span><span></span></p>
+                                <p><span class="skuer">工作地点：</span><span>深圳南山区中科大厦(高新南三道)9楼</span></p>
+                                <p><span class="skuer">工作性质：</span><span>全职</span></p>
+                                <p><span class="skuer">招聘人数：</span><span>5</span>人</p>
+                                <p><span class="skuer">联系方式：</span><span></span></p>
+                            </div>
+                            <div class="pro-ref gzxiangqxx col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                                <div>
+                                    <p class="skuer">工作内容：</p>
+                                    <p> 1.负责开发云客高可用、高效、稳定的产品及系统服务，根据业务需求，设计并实现技术解决方案，研究互联网领域最新技术成果，并应用于产品中；<br>
+                                        2. 完善并遵守团队的编码规范，编写高质量、高效率、结构清晰、易读、易维护的代码。</p>
+                                </div>
+                                <div>
+                                    <p class="skuer">工作要求：</p>
+                                    <p>1. 本科以上学历，有2至6年的PHP开发经验皆可，优秀者大专亦可；<br>
+                                        2. 对OOP有较为深入的认识，掌握常用设计模式，了解linux操作系统，熟悉常用shell命令，了解PHP相关的开源框架和项目；<br>
+                                        3. 掌握相关Web开发技术，熟悉 HTML、Javascript，熟悉MySQL，掌握关系数据库理论，有NoSQL经验者优先；<br>
+                                        4. 具备良好的代码编程习惯及较强的文档编写能力，对大型网站的负载均衡和架构有经验者优先。<br></p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <footer id="xq_footer" style="width:100%;background: #121212;position: fixed;bottom: 0;">
+        <div class="container">
+            <div class="row" style="padding: 10px;border: 0;">
+                <p style="text-align: center;color: #efefef;">北方民族大学大数据团队 &copy;版权所有</p>
+            </div>
+        </div>
+    </footer>
+    <!--/尾部-->
+
+    <script src="{% static 'lib/jquery/jquery.js' %}"></script>
+    <!-- 引入所有的Bootstrap的JS插件 -->
+    <script src="{% static 'lib/bootstrap/js/stu_js/bootstrap.js' %}"></script>
+<!-- 你自己的脚本文件 -->
+<!--<script src="js/stu_js/index.js"></script>-->
+</body>
+</html>
